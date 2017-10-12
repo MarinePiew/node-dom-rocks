@@ -1,0 +1,54 @@
+
+.container {
+  margin-top: 30px;
+}
+
+#list {
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+#list > tr {
+  background-color: #eee;
+  -webkit-transition:background-color 250ms ease-out;
+  -moz-transition:background-color 250ms ease-out;
+  -o-transition:background-color 250ms ease-out;
+  transition:background-color 250ms ease-out; 
+}
+
+#list > tr.active {
+  background-color: #aaa;
+  color: white;
+}
+
+#list > tr:not(.active):hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+#list > tr > td {
+  padding: 10px;
+}
+
+#list td.artist {
+  font-weight: bold;
+}
+
+#list td.image img {
+  max-width: 100px;
+}
+
+#details {
+  border: 1px solid #ccc;
+  padding: 30px; 
+}
+
+#details #album_image {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+#details #album_title {
+  font-weight: bold;
+  font-size: 110%;
+  margin-bottom: 10px;
+}
