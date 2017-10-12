@@ -11,9 +11,9 @@ module.exports = class {
    */
   findAll(req, res) {
     models.album.findAll({
-      attributes: ['id', 'title', 'image', 'artist.id', 'artist.name'],
+      attributes: ['id', 'title', 'image'],
       include: [{
-        attributes: ['name'],
+        attributes: [['id', 'artistId'], ['name', 'artistName']],
         model: models.artist,
         as: 'artist'
       }]

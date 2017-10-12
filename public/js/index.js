@@ -88,7 +88,7 @@ function fillAlbumsTable(albums) {
 
     let markup = `<td class="image"><img src='${album.image}' alt='image'></td>`;
     markup += `<td><table>`;
-    markup += `<tr><td class="artist">${album.artist ? album.artist.name : ''}</td></tr>`;
+    markup += `<tr><td class="artist">${album.artist ? album.artist.artistName : ''}</td></tr>`;
     markup += `<tr><td class="title">${album.title}</td></tr>`;
     markup += `</table></td>`;
     
