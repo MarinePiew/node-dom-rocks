@@ -1,12 +1,28 @@
+'use strict';
+
+let editMode = false;
 
 /**
  * Things to do when document is ready
  */
 document.addEventListener('DOMContentLoaded', () => {
+  
   getAllAlbums().then(albums => {
     fillAlbumsTable(albums);    
   }).catch(err => {
     alert(err);
+  });
+
+  document.getElementById('details_edit').addEventListener('click', (e) => {
+    enterEditMode();
+  });
+
+  document.getElementById('edit_cancel').addEventListener('click', (e) => {
+    leaveEditMode();
+  });
+
+  document.getElementById('edit_save').addEventListener('click', (e) => {
+    saveEditMode();
   });
 });
 
@@ -61,6 +77,7 @@ function getAlbum(id) {
  */
 function clickDetailsHandler(evt) {
   if (evt && evt.currentTarget) {
+    leaveEditMode();    
     let old = document.getElementsByClassName('active');
     if (old.length) {
       old[0].classList.remove('active');
@@ -106,13 +123,53 @@ function fillAlbumsTable(albums) {
  */
 function fillAlbumDetails(album) {
   for (let key in album) {
-    let item = document.getElementById(`album_${key}`);
+    let item = document.getElementById(`details_${key}`);
+    let value = album[key];
     if (item) {
-      if (key === 'image') {
-        item.src = album[key];        
-      } else {
-        item.textContent = album[key];
+      switch (key) {
+        case 'id':
+          item.val = value;
+          break;
+        case 'image':
+          item.src = value;
+          break;
+        case 'artist':
+          item.textContent = value.name;
+          break;
+        default:
+          item.textContent = value;
+          break;
       }
     }
   }
+}
+
+function enterEditMode() {
+  let fields = document.querySelectorAll('[id^=details_]');
+  for (let field of fields) {
+    let id = field.id.replace('details_', 'edit_');
+    let item = document.getElementById(id);
+    if (item) {
+      if (id == 'edit_image') {
+        item.value = field.src;
+      } else {
+        item.value = field.textContent;
+      }
+    }
+  }
+  document.getElementById('edit').classList.remove('hidden');
+  document.getElementById('details').classList.add('hidden');
+  editMode = true;
+}
+
+function leaveEditMode() {
+  if (editMode) {
+    editMode = true;
+    document.getElementById('edit').classList.add('hidden');
+    document.getElementById('details').classList.remove('hidden');
+  }
+}
+
+function saveEditMode() {
+  
 }

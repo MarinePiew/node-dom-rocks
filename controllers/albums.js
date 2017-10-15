@@ -29,6 +29,9 @@ module.exports = class {
       include: [{
         model: models.genre,
         as: 'genre'
+      },{
+        model: models.artist,
+        as: 'artist'
       }]
     }).then(album => {
       if (album) {

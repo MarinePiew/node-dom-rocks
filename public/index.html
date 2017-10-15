@@ -38,12 +38,33 @@
       </div>
       <div class="col-sm-6">
         <div id="details">
-          <img id="album_image" src="">
-          <div id="album_artist"></div>
-          <div id="album_title"></div>
-          <div id="album_description"></div>
-          <div id="album_createdAt"></div>
-          <a href="edit.html" class="btn btn-default">Edit</a>
+          <input id="details_id" type="hidden">
+          <img id="details_image" src="">
+          <div id="details_artist"></div>
+          <div id="details_title"></div>
+          <div id="details_description"></div>
+          <div id="details_createdAt"></div>
+          <div class="commands">
+            <button id="details_edit" class="btn btn-default">Edit</button>
+          </div>
+        </div>
+        <div id="edit" class="hidden">
+          <div class="form-group">
+            <input id="edit_image" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <input id="edit_artist" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <input id="edit_title" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <input id="edit_description" type="text" class="form-control">
+          </div>
+          <div class="commands">
+            <button id="edit_save" class="btn btn-success">Save</button>
+            <button id="edit_cancel" class="btn btn-default">Cancel</button>
+          </div>
         </div>
       </div>
     </div>

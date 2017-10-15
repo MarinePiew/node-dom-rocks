@@ -1,4 +1,4 @@
-# node-rocks
-Minimal node/express DOM sample (Livecoding)
+# node-dom-rocks
+Basic node/express DOM sample
 
-Demonstrate a minimal node/express server and how to dynamically insert data to an HTML page via basic navigator JS libraries. 
+Demonstrate a basic node/express server and how to dynamically insert data to an HTML page via navigator Vanilla JS. 

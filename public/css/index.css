@@ -43,12 +43,26 @@
   padding: 30px; 
 }
 
-#details #album_image {
+#details #details_image {
   max-width: 100%;
   margin-bottom: 20px;
 }
-#details #album_title {
+
+#details #details_artist {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+#details #details_title {
   font-weight: bold;
   font-size: 110%;
   margin-bottom: 10px;
+}
+
+#details #details_description {
+  margin-bottom: 10px;
+}
+
+.commands {
+  margin-top: 15px;
 }
